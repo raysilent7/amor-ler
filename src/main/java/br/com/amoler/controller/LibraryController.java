@@ -1,8 +1,9 @@
 package br.com.amoler.controller;
 
-import br.com.amoler.domain.Funcionario;
-import br.com.amoler.domain.request.FuncionarioRequest;
-import br.com.amoler.service.CadastroService;
+import br.com.amoler.domain.Employee;
+import br.com.amoler.domain.PersonType;
+import br.com.amoler.domain.request.RegistryRequest;
+import br.com.amoler.service.RegistryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,13 +16,13 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @RestController
 @RequestMapping("/biblioteca")
 @RequiredArgsConstructor
-public class BibliotecaController {
+public class LibraryController {
 
-    private final CadastroService cadastroService;
+    private final RegistryService registryService;
 
     @PostMapping(value = "/cadastro/funcionario", consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
-    public Mono<Funcionario> cadastroFuncionario(@RequestBody FuncionarioRequest request) {
+    public Mono<Employee> registryEmployee(@RequestBody RegistryRequest registryRequest) {
 
-        return cadastroService.cadastrar(request);
+        return registryService.register(registryRequest, PersonType.EMPLOYEE);
     }
 }
