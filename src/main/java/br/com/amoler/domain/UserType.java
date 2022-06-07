@@ -3,7 +3,7 @@ package br.com.amoler.domain;
 import lombok.Getter;
 
 @Getter
-public enum PersonType {
+public enum UserType {
 
     EMPLOYEE,
     CUSTOMER

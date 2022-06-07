@@ -1,0 +1,12 @@
+logging:
+  level:
+    root: WARN
+    br.com.amoler: INFO
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/amoler
+      readPreference: ''
+      writeConcern: ''
+      auto-index-creation: true

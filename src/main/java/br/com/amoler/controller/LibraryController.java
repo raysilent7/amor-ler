@@ -1,7 +1,8 @@
 package br.com.amoler.controller;
 
 import br.com.amoler.domain.Employee;
-import br.com.amoler.domain.PersonType;
+import br.com.amoler.domain.User;
+import br.com.amoler.domain.UserType;
 import br.com.amoler.domain.request.RegistryRequest;
 import br.com.amoler.service.RegistryService;
 import lombok.RequiredArgsConstructor;
@@ -21,8 +22,8 @@ public class LibraryController {
     private final RegistryService registryService;
 
     @PostMapping(value = "/cadastro/funcionario", consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
-    public Mono<Employee> registryEmployee(@RequestBody RegistryRequest registryRequest) {
+    public Mono<User> registryEmployee(@RequestBody RegistryRequest registryRequest) {
 
-        return registryService.register(registryRequest, PersonType.EMPLOYEE);
+        return registryService.register(registryRequest, UserType.EMPLOYEE);
     }
 }
